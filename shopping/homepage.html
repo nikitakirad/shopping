@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html ng-app="rta">
+<head>
+   <title>Ecommerce</title>
+   <link rel="shortcut icon" type="image/jpg" href="../public/rta/images/favicon1.jpg"/>
+   <link rel="stylesheet" href="../public/rta/stylesheets/themable.css">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="../public/rta/stylesheets/bootstrap.min.css">
+   <link rel="stylesheet" href="../public/rta/stylesheets/style.css">
+   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+   <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+   <!-- Latest compiled JavaScript -->
+   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
+
+   <!-- Below files are required for cobrowse, webchat, audio, video, schedule callback and meeeting-->
+   <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+
+   <link rel="stylesheet" type="text/css" href="../public/common/stylesheets/jquery-ui.css">
+   <!-- <link href="../public/common/stylesheets/avaya/style.css" rel="stylesheet" type="text/css" /> -->
+   <!-- <link href="../public/insurance/stylesheets/style.css" rel="stylesheet" type="text/css" /> -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <script src="../public/common/javascripts/customer_journey.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script src="../public/common/javascripts/common.js"></script>
+   <script src="../public/common/javascripts/avaya/cobrowse-oceana/js/libs/LAB.min.js"></script>
+   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+   <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+   <!-- Webchat dependencies -->
+
+
+  
+   <!-- build:js js/avayaChat.js -->
+ 
+   <!-- CoBrowse dependencies -->
+  
+
+   <!--AMV Config -->
+<!-- Include WebRTC reference implementation, note pubsub.js is used by some of the later javascript files,
+   so it must be loaded first -->
+   <!-- Video starts here  -->
+   
+   <!-- Include the Oceana Customer Services SDK -->
+
+   <!-- Video ends here  -->
+
+   <!-- import AvayaClientServices and its dependencies -->
+   <!-- <script src="js/libs/bootstrap.min.js"></script> -->
+   <!-- build:css css/style.min.css -->
+
+   <!-- endbuild-->
+   <!-- Ocenana reference client dependencies -->      
+  
+   
+
+
+    
+   
+    <style type="text/css">
+         a {
+             color: #4064ff;
+         }
+         .right{
+            float: right;
+            margin:5px
+         }
+         
+         .left{
+            float: left;
+            margin:5px
+         }
+         
+        .circle{
+            width:25px;
+            height: 25px;
+            border-radius:50%;
+            background-color:lightgrey;
+            text-align: center;
+            float: left;
+            line-height: 25px;
+            
+        }
+        .p{
+            /* width:70%; */
+            float: right;
+            margin-left: 5px;
+            background-color: rgb(22, 223, 22);
+            border:1px solid rgb(22, 223, 22);
+            border-radius: 5px;
+            padding: 5px;
+            margin-right: 5px;
+            font-size:small;
+            padding-right:'10px';
+            color:white;
+        }
+        .p1{
+            width:70%;
+            float: left;
+            margin-left: 5px;
+            font-size:small;
+            background-color: rgba(241, 241, 241, 0.986);
+            border:1px solid rgba(241, 241, 241, 0.986);;
+            border-radius: 10px;
+            padding: 5px;
+            color:black;
+        }
+        :focus {
+            outline: 0;
+         }
+         .circle::after{
+             clear: both; 
+         }  
+
+        .todaysdate{
+           text-align: center;
+           font-size: xx-small;
+           color:rgb(179, 178, 178);
+           font-weight:bold;
+        }
+        .b{
+          
+            cursor: pointer;
+             background-color:white;
+            border:1px solid white; 
+            color:rgba(179, 178, 178);
+           font-weight:bold;
+        }
+        .right{
+            clear:right;
+            clear:both;
+         }
+         .left{
+            clear:left;
+            clear:both;
+         }
+         body{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            .cards{
+                width:380px;
+                height:150px;
+                border:1px solid lightgray;
+                border-radius: 5px;
+            }
+            .cards div{
+                line-height: 150px;
+                vertical-align: middle;
+            }
+            .cards img{
+               width:60px;
+               height:60px;
+            }
+            hr{
+                height: 2px;
+    
+                background: #4064ff;
+                border-radius: 3px;
+            }
+            .cards span{
+
+               color: red;
+               font-size: 20px;
+            }
+         /* .faq_question {
+            margin: 0px;
+            padding: 5px 5px 5px 5px;
+            display: inline-block;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+        }
+         
+        .faq_answer_container {
+            overflow: hidden;
+            padding: 0px;
+            font-size: 14px;
+        }
+        #loader { 
+            border: 8px solid #124680; 
+            border-radius: 50%; 
+            border-top: 8px solid white; 
+            width: 70px; 
+            height: 70px; 
+            animation: spin 1s linear infinite; 
+        } 
+        
+        @keyframes spin { 
+            100% { 
+                transform: rotate(360deg); 
+            } 
+        } 
+        .center { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            margin: auto; 
+        }  */
+        .c{
+         transition: transform .2s;
+        }
+       .c:hover{
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         transform: scale(1.1);
+      }
+      section{
+         /* background-color: rgb(245, 243, 243); */
+         padding:0px 50px;
+         padding-top: 75px;
+        
+         /* margin:50px 0px" */ 
+         
+      }
+      header{
+         z-index: 1;
+         position: fixed;
+         top:0;
+         width:100%
+      }
+      c1{
+         border-radius: 50%;
+         height:50px;
+         width:50px
+      }
+      button{
+         padding:15px 40px;
+         border-radius: 50px;
+         background-color: black;
+         color:white;
+         border:1px solid black
+      }
+      button:hover{
+         background-color: orange;
+         border: 1px solid orange;
+      }
+      section h4{
+         color: orange;
+      }
+      .i:hover{
+         border:3px solid orange;
+         color: orange;
+         opacity:0.7;
+      }
+      </style>
+</head>
+<!-- <body onload="callingApiForFaq()"> -->
+   <body>
+   <!-- <div ng-include="'./views/rta/_head.html'"></div> -->
+
+   <!-- <div ng-view></div> -->
+
+   
+   <!-- <div>
+      <h3 style="padding-left: 8%;">FAQ's</h3>
+      <div id="faqlist" style="margin-left: 7%;">
+      <div id="loader" style="display:none;margin-top: 47%;" class="center"></div> 
+   </div> -->
+   <!-- <div ng-include="'./views/airline/_footer.html'" ></div> -->
+   <!-- Require assistance panel-->
+
+   <!-- <div>
+      <h3 style="padding-left: 8%;">FAQ's</h3>
+      <div id="faqlist" style="margin-left: 7%;">
+      <div id="loader" style="display:none;margin-top: 47%;" class="center"></div> 
+   </div> -->
+   
+   <header style="background: black;">
+      <div class="row" >
+         <div class="col-sm-3" style="text-align: center;vertical-align: center;line-height: 70px;">
+            <a style="color: white;font-size: 15px;text-transform: uppercase;" href="#"><b>Ecommerce</b></a>
+
+         </div>
+      <div class="col-sm-7"></div>
+      <div class="col-sm-2" style="text-align: center;vertical-align: center;line-height: 70px;">
+         <a style="color: white;font-size: 15px;text-transform: uppercase;" href="#" id="logout" ng-click="logout()"><b>Log Out</b></a>
+      </div>
+      </div>
+   </header>
+   <section style="padding-left: 0px;padding-right: 0px;padding-bottom: 0px;padding-top: 50px;">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+           <li data-target="#demo" data-slide-to="0" class="active" style="margin-left: 5px;margin-right: 5px;"></li>
+           <li data-target="#demo" data-slide-to="1" style="margin-left: 5px;margin-right: 5px;"></li>
+           <li data-target="#demo" data-slide-to="2" style="margin-left: 5px;margin-right: 5px;"></li>
+         </ol>
+         <div class="carousel-inner">
+           <div class="carousel-item active">
+             <img src="../public/rta/images/p.jpg"  width="100%" height="450">
+               
+           </div>
+           <div class="carousel-item">
+             <img src="../public/rta/images/advertise.jpg"  width="100%" height="450" style="object-fit: cover;" >
+                
+           </div>
+           <div class="carousel-item">
+             <img src="../public/rta/images/p3.jpg"  width="100%" height="450">
+               
+           </div>
+         </div>
+         <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
+           <span class="carousel-control-prev-icon"></span>
+         </a>
+         <a class="carousel-control-next" href="#demo" data-slide="next">
+           <span class="carousel-control-next-icon"></span>
+         </a> -->
+       </div>
+   </section>
+   <section style="padding-bottom: 100px;">
+      <div class="container-fluid" >
+         <h1 style="text-transform: capitalize;text-align: center;"><b>SHOP WITH <span style="color: orange;">US</span></b></h1>
+         <h4 style="text-align: center;color:grey">Handpicked favourite just for you</h4>
+         <div class="row" style="margin-top: 5%;">
+            <div style="width:90%;margin:auto;padding:0 25px;">
+            <div class="col-sm-3" >
+               <div style="height:220px;width:220px;border-radius: 50%;"  onclick="scrolltofurniture()">
+                  <img src="../public/rta/images/cir1.jpg"  class="i" height="100%" width="100%" style="border-radius: 50%;object-fit: cover;cursor: pointer;"></img>
+                  <h4 style="text-align: center;color: black;" ><strong>Furniture</strong></h4>
+               </div>
+
+            </div>
+            <div class="col-sm-3" style="padding:0px 25px">
+               <div style="height:220px;width:220px;border-radius: 50%;" onclick="scrolltoelectronics()">
+                  <img src="../public/rta/images/cir2.jpg" class="i" height="100%" width="100%" style="border-radius: 50%;object-fit: cover;cursor: pointer;"></img>
+                  <h4 style="text-align: center;color: black;"><strong>Electronics</strong></h4>
+               </div>
+
+            </div>
+            <div class="col-sm-3" style="padding:0px 25px">
+               <div style="height:220px;width:220px;border-radius: 50%;" onclick="scrolltofashion()">
+                  <img src="../public/rta/images/cir3.jpg" class="i" height="100%" width="100%" style="border-radius: 50%;object-fit: cover;cursor: pointer;"></img>
+                  <h4 style="text-align: center;color: black;"><strong>Fashion</strong></h4>
+               </div>
+
+            </div>
+            <div class="col-sm-3" style="padding:0px 25px">
+               <div style="height:220px;width:220px;border-radius: 50%;" onclick="scrolltotoys()">
+                  <img src="../public/rta/images/cir4.jpg" class="i" height="100%" width="100%" style="border-radius: 50%;object-fit: cover;cursor: pointer;"></img>
+                  <h4 style="text-align: center;color: black;"><strong>Toys</strong></h4>
+               </div>
+
+            </div>
+            </div>
+          </div>
+        
+      </div>
+    
+   </section>
+   <section style="background-color: rgb(245, 243, 243);padding-top: 35px;padding-bottom: 35px;">
+      <div class="container-fluid" style="width:90%;">
+         <div class="col-sm-5" style="margin-top: 9%;">
+            <h1><b>All Branded Men's Suits Are <span style="color: orange;">30% OFF</span></b></h1><br/>
+          
+            <h4 style="color:grey">Visit fast to see amazing creation</h4><br/>
+            <!-- <button >Shop Now</button> -->
+         </div>
+         <div class="col-sm-7" style="float: left;">
+            <img src="../public/rta/images/1.jpg" width="100%" style="border-radius: 4px;"/>
+         </div>
+      </div>
+   </section>
+   <section >
+      <div class="container-fluid" style="width:90%;">
+         <div class="col-sm-8" >
+            <img src="../public/rta/images/bagadvertise.jpg" width="100%" style="border-radius: 4px;"/>
+         </div>
+         <div class="col-sm-4" style="margin-top: 4%;">
+            <h1><b>All Women's Branded Bags Are <span style="color: orange;">30% DISCOUNT</span></b></h1><br/>
+          
+            <h4 style="color:grey">Visit fast to see amazing creation</h4><br/>
+            <button >Shop Now</button>
+         </div>
+      </div>
+   </section>
+   <section >
+      <div style="width:90%;margin:auto">
+         <h2 style="margin: 0px;text-transform: capitalize;"><b>Digital & Electronics</b></h2>
+         <hr style="margin: 0px;background: black;" ></hr>
+         
+         
+         <div class="card-deck" style="border-radius: 4px;padding: 20px 10px;margin:0px 10px;">
+            <div class="card c" >
+              <div class="card-body text-center" style="padding-top: 60px;" >
+               <img class="card-img-top" src="../public/rta/images/laptop.jpg" width="100%" style="object-fit: cover;"></img>
+               
+              </div>
+              <div  style="text-align: center;">
+               <h5><strong>Laptops</strong></h5>
+               <h4><strong >$12.55</strong></h4>
+              </div>
+            </div>
+            <!-- <div class="card c">
+               <div class="card-body text-center">
+                  <img class="card-img-top" src="../public/rta/images/phone.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Mobile Phone's</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div> -->
+             <div class="card c">
+               <div class="card-body text-center" style="padding-top: 60px;">
+                  <img class="card-img-top" src="../public/rta/images/tablet1.jpg" width="100%" style="object-fit: cover;"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Tablets</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+             <div class="card c">
+               <div class="card-body text-center">
+                  <img class="card-img-top" src="../public/rta/images/e2.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Mouse</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+         </div>
+      </div>
+   </section>
+   <section >
+      
+      <div style="width:90%;margin:auto">
+         <h2 style="margin: 0px;text-transform: capitalize;"><b>Fashion</b></h2>
+         <hr style="margin: 0px;background: black" ></hr>
+         
+         
+         <div class="card-deck" style="border-radius: 4px;padding: 20px 10px;margin:0px 10px">
+            <div class="card c" >
+              <div class="card-body text-center"  >
+               <img class="card-img-top" src="../public/rta/images/top.jpg"></img>
+               
+              </div>
+              <div  style="text-align: center;">
+               <h5><strong>Women's top</strong></h5>
+               <h4><strong >$12.55</strong></h4>
+              </div>
+            </div>
+            <div class="card c">
+               <div class="card-body text-center">
+                  <img class="card-img-top" src="../public/rta/images/tshirt.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Men's tshirt</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+             <!-- <div class="card c">
+               <div class="card-body text-center">
+                  <img class="card-img-top" src="../public/rta/images/jacket.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Jacket's</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div> -->
+             <div class="card c">
+               <div class="card-body text-center" >
+                  <img class="card-img-top" src="../public/rta/images/kurta.jpg" width="100%" style="object-fit: cover;"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Women's kurta</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+         </div>
+      </div>
+   </section>
+   <section >
+     
+      <div style="width:90%;margin:auto">
+         <h2 style="margin: 0px;text-transform: capitalize;"><b>Furniture</b></h2>
+         <hr style="margin: 0px;background:black;" ></hr>
+         
+         
+         <div class="card-deck" style="border-radius: 4px;padding: 20px 10px;margin:0px 10px">
+            <div class="card c" >
+              <div class="card-body text-center" style="padding-top: 60px;" >
+               <img class="card-img-top" src="../public/rta/images/sofa.jpg"></img>
+               
+              </div>
+              <div  style="text-align: center;">
+               <h5><strong>Sofa's</strong></h5>
+               <h4><strong >$12.55</strong></h4>
+              </div>
+            </div>
+            <div class="card c">
+               <div class="card-body text-center" >
+                  <img class="card-img-top" src="../public/rta/images/chair.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Chair's</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+             <div class="card c">
+               <div class="card-body text-center" style="padding-top: 60px;">
+                  <img class="card-img-top" src="../public/rta/images/table.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Table's</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+             <div class="card c">
+               <div class="card-body text-center" style="padding-top: 60px;">
+                  <img class="card-img-top" src="../public/rta/images/bed.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Bed's</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+         </div>
+      </div>
+   </section>
+   <section style="padding-bottom:50px;">
+     
+      <div style="width:90%;margin:auto">
+         <h2 style="margin: 0px;text-transform: capitalize;"><b>Toys,kids & baby</b></h2>
+         <hr style="margin: 0px;background: black;" ></hr>
+         
+         
+         <div class="card-deck" style="border-radius: 4px;padding: 20px 10px;margin:0px 10px">
+            <div class="card c" >
+              <div class="card-body text-center"  >
+               <img class="card-img-top" src="../public/rta/images/toy1.jpg"></img>
+               
+              </div>
+              <div  style="text-align: center;">
+               <h5><strong>Train's</strong> </h5>
+               <h4><strong style="color:orange">$12.55</strong></h4>
+              </div>
+            </div>
+            <div class="card c">
+               <div class="card-body text-center">
+                  <img class="card-img-top" src="../public/rta/images/toy2.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Teddy's</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+             <div class="card c">
+               <div class="card-body text-center">
+                  <img class="card-img-top" src="../public/rta/images/toy3.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Piano's</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+             <div class="card c">
+               <div class="card-body text-center">
+                  <img class="card-img-top" src="../public/rta/images/toy4.jpg"></img>
+                  
+               </div>
+               <div  style="text-align: center;">
+                  <h5><strong>Toy's</strong></h5>
+                  <h4><strong >$12.55</strong></h4>
+                 </div>
+             </div>
+         </div>
+      </div>
+   </section>
+   <footer style="background: black;height:10%;padding:10px">
+      <p style="text-align: center;color:white">Demo</p>
+   </footer>
+   
+   <script>
+      function scrolltofurniture(){
+         window.scrollTo(0,3000);
+      }
+      function scrolltotoys(){
+         window.scrollTo(0,3600);
+      }
+      function scrolltofashion(){
+         window.scrollTo(0,2500);
+      }
+      function scrolltoelectronics(){
+         window.scrollTo(0,1900);
+      }
+   </script>
+   <script src="../public/rta/javascripts/homepage.js"></script>
+
+   <script src="../node_modules/angular/angular.min.js"></script>
+   <script src="../node_modules/angular-route/angular-route.min.js"></script>
+   <script src="../public/rta/javascripts/materialBootstrap.js"></script>
+   <script src="../public/common/javascripts/customer_journey.js"></script>
+   <script src="../public/rta/javascripts/config/dashboard_config.js"></script>
+   <script src="../public/rta/javascripts/controllers/header_controller.js"></script>
+   <script src="../public/rta/javascripts/rta.js"></script>   
+
+   
+</body>
+</html>
+

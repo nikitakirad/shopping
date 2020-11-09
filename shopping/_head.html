@@ -1,0 +1,115 @@
+<head>
+       <style>
+          /* .form-signin {
+                max-width: 400px;
+                padding: 35px 30px 66px;
+                margin: 0 auto;
+                background-color: #eee;
+                border: 3px dotted rgba(0,0,0,0.1);
+            }
+            .form-control {
+                position: relative;
+                font-size: 13px;
+                height: auto;
+                padding: 8px;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                display: block;
+                width: 100%;
+            }
+            .text-normal {
+                color: white;
+                text-align: right;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            } */
+            body{
+                margin: 0;
+                padding:0;
+            }
+            .button{
+         padding:10px 30px;
+         border-radius: 40px;
+         background-color: black;
+         color:white;
+         border:1px solid black
+      }
+      button:hover{
+         background-color: orange;
+         border: 1px solid orange;
+      }
+        </style>
+      
+</head>
+ 
+ <div >
+    <header style="background: black;">
+        <div class="row" >
+           <div class="col-sm-3" style="text-align: center;vertical-align: center;line-height: 70px;">
+              <a style="color: white;font-size: 15px;text-transform: uppercase;" href="#"><b>Ecommerce</b></a>
+  
+           </div>
+        <div class="col-sm-7"></div>
+        <!-- <div class="col-sm-2" style="text-align: center;vertical-align: center;line-height: 70px;">
+           <a style="color: white;font-size: 15px;text-transform: uppercase;" href="#" id="logout" ng-click="logout()"><b>Signout</b></a>
+        </div> -->
+        </div>
+     </header>
+ <div  ng-controller="LoginController" >
+ <!-- <div class="container-fluid" id="loginDiv">
+   <div style="margin-top: 100px;margin-bottom: 280px;">
+      <div style="max-width:400px;background-color: red;margin:auto;height: 30%;">
+          <img style="height:60px;margin:5px 20px;" src="../public/rta/images/logo_rta.jpg" style="height:35%"/>
+      </div>
+
+          <form class="form-signin">
+               <input type="text"  class="form-control" id="username" placeholder="Username" autofocus="" ng-model="username" ng-keypress="keypressevt()"><br/>
+               <input type="password" class="form-control" id="password" placeholder="Password" required="" autofocus="" ng-model="password">
+              <button type="button" class="submitButton" style="float: right;margin-top:10px;background-color: red;padding:10px;border-radius:5px;border:red;color: white;" ng-click="login()">Sign In</button><br>
+              <!-- <div class="form-group"> <h4 class=" text-normal"><b class="text-normal error_message"></b></h4></div> -->
+          <!-- </form>
+      
+      </div>
+  </div> -->
+<!-- </div> --> 
+<div class="container-fluid" id="loginDiv" style="padding:20px">
+	<div class="col-sm-12" >	
+        <div class="col-sm-8 " >
+            <img  src="../public/rta/images/banner-img1.png" width="100%" height="550px" />
+
+		</div>
+				<div class="col-sm-4" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                ;  padding: 3%;margin-top: 80px;border-radius: 4px;">
+					 <div class="form-group">
+					    <h2 class="text-center" >Log In </h2>
+					  </div>
+					  <hr/>
+					 <div class="form-group">
+					    <h4 class="text-center" style="color:red"  id="errorMessage"></h4>
+					  </div>
+					 <div class="form-group">
+					    <label for="email">Username :</label>
+					    <input type="text" class="form-control" id="email" ng-model="username" ng-keypress="keypressevt()" >
+					  </div>
+					  <div class="form-group">
+					    <label for="pwd">Password:</label>
+					    <input type="password" class="form-control" id="pwd" ng-model="password">
+					  </div>
+					 
+					  <button type="button" class="button" ng-click="login()">Submit</button>
+					  <hr/>
+				</div>
+			
+	</div>
+</div>
+ </div>
+ <footer style="background: black;height:10%;padding:10px">
+    <p style="text-align: center;color:white">Demo</p>
+ </footer>
+ </div>
+  
